@@ -1,0 +1,16 @@
+input{
+    margin: 10px;
+}
+
+
+.fila-seleccionada {
+    background-color: #e0e0e0;
+}
+
+table, td, tr{
+    text-align: center;
+}
+
+table, td{
+    border: 1px solid black;
+}

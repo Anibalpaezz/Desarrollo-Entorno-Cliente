@@ -1,0 +1,23 @@
+h1{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.contenedor{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.fotos{
+    display: grid;
+    grid-template-columns: 200px 200px 200px;
+    grid-template-rows: auto;
+    place-items: center;
+    grid-gap: 10px;
+}
+
+img {
+    width: 200px;
+    height: auto;
+}
