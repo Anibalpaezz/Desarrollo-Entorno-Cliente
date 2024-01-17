@@ -1,17 +1,20 @@
-DROP DATABASE IF EXISTS pacoparty;
-
-CREATE DATABASE pacoparty CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
+USE pacoparty;
+DROP TABLE IF EXISTS usuario;
 
 CREATE TABLE usuarios (
-    ID int auto_increment primary key,
-    usuario varchar(50) unique,
-    pass varchar(255) not null,
-    permisos tinyint not null default 0,
-    correo varchar(255) unique,
+    DNI int(10) primary key,
+    nombre varchar(50),
+    apellido varchar(50),
     fecha_nacimiento date,
-    fecha_registro timestamp default current_timestamp,
+    correo varchar(255) unique,
+    telefono varchar(15) unique,
     direccion varchar(50) default null,
-    Codigo_postal varchar(20),
+    codigo_postal varchar(20),
+    fotografia varchar(35),
+    pass varchar(6) not null,
+    puntos int(3) default 0,
+    permisos boolean default false,
+    fecha_registro timestamp default current_timestamp,
     IP varchar(45)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
