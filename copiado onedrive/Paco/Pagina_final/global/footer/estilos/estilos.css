@@ -1,0 +1,14 @@
+/*Estilos para el pie de pagina*/
+.page-content {
+    min-height: calc(100vh - 60px);
+    padding-bottom: 60px;
+}
+
+#pie-pagina {
+    padding: 10px;
+    bottom: 0;
+    width: 100%;
+}
+
+.jw-album-image img, .jw-element-image img { pointer-events: none; -webkit-touch-callout: none; }
+.pswp__share-tooltip .pswp__share--download { display: none; }

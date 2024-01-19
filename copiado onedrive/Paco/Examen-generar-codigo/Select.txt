@@ -1,0 +1,18 @@
+<select>
+        <option value="">Opcion1.1</option>
+        <option value="">Opcion1.2</option>
+        <option value="">Opcion1.3</option>
+        <option value="">Opcion1.4</option>
+        <option value="">opcion1.5</option>
+</select>
+
+<select>
+        <option value="">Opcion2.1</option>
+        <option value="">Opcion2.2</option>
+        <option value="">Opcion2.3</option>
+        <option value="">Opcion2.4</option>
+        <option value="">opcion2.5</option>
+</select>
+
+
+

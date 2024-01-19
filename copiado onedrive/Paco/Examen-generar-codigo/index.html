@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Generador de HTML</title>
+    <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+    <div class="contenedor">
+        <h2>Código HTML</h2>
+        <textarea id="codigoUsuario" rows="10" cols="50"></textarea><br>
+        <button onclick="generarCodigo()">Generar</button>
+        <select id="selectorArchivo" onchange="cargarArchivo()"></select>
+        <button onclick="guardarEnBaseDeDatos()" id="btnGuardar" disabled>Guardar</button>
+    </div>
+    <div class="contenedor">
+        <h2>Resultado HTML</h2>
+        <div id="resultado" style="max-width: 1000px;"></div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,16 @@
+.navbar {
+    flex-direction: row;
+    justify-content: center;
+    text-align: center;
+    height: 150px;
+}
+
+#boton_navegacion {
+    width: 230px;
+    height: 30px;
+    color: white;
+}
+
+#boton_navegacion:hover {
+    color: orangered;
+}

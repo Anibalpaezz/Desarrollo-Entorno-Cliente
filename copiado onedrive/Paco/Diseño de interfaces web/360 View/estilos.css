@@ -1,0 +1,113 @@
+@charset "utf-8";
+
+body {
+    margin: 0px;
+    padding: 0px;
+    font-family: myriad pro;
+}
+
+a {
+    text-decoration: none;
+}
+
+.content-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+    flex-direction: row-reverse;
+    justify-content: flex-end;
+    margin: 80px;
+}
+
+.img-container {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.img-container img {
+    max-height: 100%;
+    max-width: 100%;
+}
+
+.text-container {
+    display: flex;
+    margin-right: auto;
+    flex-direction: column;
+    flex-wrap: wrap;
+    width: 600px;
+}
+
+.center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 800px;
+}
+
+.center img {
+    display: flex;
+    margin: auto;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.arrow-button {
+    font-size: 24px;
+    font-weight: bold;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.7);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    height: 40px;
+    width: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 2;
+}
+
+.arrow-button:hover {
+    background-color: rgba(0, 0, 0, 0.9);
+}
+
+/* Style for the close button */
+.close {
+    font-size: 24px;
+    font-weight: bold;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.7);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    height: 40px;
+    width: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: -130px;
+    right: 360px;
+    z-index: 2;
+}
+
+.close:hover {
+    background-color: rgba(0, 0, 0, 0.9);
+}

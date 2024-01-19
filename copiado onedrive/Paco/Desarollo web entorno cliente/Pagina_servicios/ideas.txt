@@ -1,0 +1,45 @@
+web de servicios
+	coches
+        matricula (primaria)
+        marca
+		modelos
+        precio
+        numero de ocupantes (no nula)
+        opciones
+        zonas
+        disponibilidad
+	catering
+        CIF (primaria)
+        nombre empresa
+        menu
+        zonas 
+        numero de comensales
+        precio enum
+        observaciones
+        disponibilidad
+    entretenimiento
+	    djs
+	    bailarines
+        magos
+        comicos
+        precio
+        observaciones
+        zonas
+        disponibilidad
+    usuarios
+        dni (primaria)
+        nombre
+        apellidos
+        email
+        contraseña
+    facturacion
+        dni (usuarios)
+        tiempo de la contratacion
+        tipo de servicios (conectada a todas)
+	cara b
+		scorts
+        organos
+        animales exoticos
+        armas
+        estupefacientes
+        sicarios

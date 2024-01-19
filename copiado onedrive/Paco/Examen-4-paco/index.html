@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Dynamic Table</title>
+</head>
+<body>
+    <button onclick="agregarFila()">Añadir</button>
+    <button onclick="eliminarFila()">Borrar</button>
+
+    <table id="miTabla">
+        <tr>
+            <th>Marca</th>
+            <th>Modelo</th>
+            <th>Cilindrada</th>
+            <th>Combustible</th>
+            <th>Año</th>
+        </tr>
+    </table>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
+<?php
+if ($_SERVER["REQUEST_METHOD"] === "POST") {
+    // Obtener el código HTML enviado desde JavaScript
+    $htmlCode = file_get_contents("php://input");
+
+    // Realizar la lógica de guardado en la base de datos (simulación)
+    // Guardar $htmlCode en tu base de datos
+
+    // Respondemos con un mensaje de éxito o error
+    echo "Código HTML guardado con éxito.";
+} else {
+    // Si alguien intenta acceder directamente a save.php, devolvemos un error
+    header("HTTP/1.1 403 Forbidden");
+    echo "Acceso prohibido.";
+}
+?>
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Generador de HTML</title>
+</head>
+<body>
+    <div>
+        <h2>Código HTML</h2>
+        <textarea id="userCode" rows="10" cols="50"></textarea><br>
+        <button onclick="generateCode()">Generar código >></button>
+        <select id="fileSelector" onchange="loadFile()"></select>
+        <button onclick="saveToDatabase()" id="saveBtn" disabled>Guardar >></button>
+    </div>
+    <div>
+        <h2>Resultado HTML</h2>
+        <div id="result" style="max-width: 1000px;"></div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
+

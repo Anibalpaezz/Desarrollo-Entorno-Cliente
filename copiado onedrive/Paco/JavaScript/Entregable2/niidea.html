@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crear Tabla con Títulos</title>
+</head>
+<body>
+    <h1>Crear una Tabla con Títulos para Filas y Columnas</h1>
+    <div>
+        <label for="numFilas">Número de Filas:</label>
+        <input type="number" id="numFilas" placeholder="Ingrese el número de filas">
+    </div>
+    <div>
+        <label for="numCols">Número de Columnas:</label>
+        <input type="number" id="numCols" placeholder="Ingrese el número de columnas">
+    </div>
+    <button id="crearTablaButton">Crear Tabla</button>
+    <div id="contenedorTabla"></div>
+
+    <script>
+        document.getElementById("crearTablaButton").addEventListener("click", function () {
+            const numFilas = parseInt(document.getElementById("numFilas").value);
+            const numCols = parseInt(document.getElementById("numCols").value);
+
+            if (!isNaN(numFilas) && !isNaN(numCols)) {
+                crearTablaConTitulos(numFilas, numCols);
+            }
+        });
+
+        function crearTablaConTitulos(numFilas, numCols) {
+            const contenedorTabla = document.getElementById("contenedorTabla");
+            contenedorTabla.innerHTML = "";
+
+            const tabla = document.createElement("table");
+            tabla.border = "1";
+
+            // Crear fila para títulos de columna
+            const filaTitulosColumna = document.createElement("tr");
+            for (let j = 0; j < numCols; j++) {
+                const tituloColumna = prompt(`Ingrese el título para la Columna ${j + 1}:`);
+                const celdaTituloColumna = document.createElement("th");
+                celdaTituloColumna.textContent = tituloColumna || ""; // Establecer título de columna o vacío si el usuario cancela
+                filaTitulosColumna.appendChild(celdaTituloColumna);
+            }
+            tabla.appendChild(filaTitulosColumna);
+
+            for (let i = 0; i < numFilas; i++) {
+                const fila = document.createElement("tr");
+
+                // Crear celda para título de fila
+                const tituloFila = prompt(`Ingrese el título para la Fila ${i + 1}:`);
+                const celdaTituloFila = document.createElement("th");
+                celdaTituloFila.textContent = tituloFila || ""; // Establecer título de fila o vacío si el usuario cancela
+                fila.appendChild(celdaTituloFila);
+
+                for (let j = 0; j < numCols; j++) {
+                    const celda = document.createElement("td");
+
+                    // Solicitar datos
+                    const datosCelda = prompt(`Ingrese los datos para la Fila ${i + 1}, Columna ${j + 1}:`);
+                    const nodoDatos = document.createElement("p");
+                    nodoDatos.textContent = datosCelda || ""; // Establecer datos de celda o vacío si el usuario cancela
+
+                    celda.appendChild(nodoDatos);
+                    fila.appendChild(celda);
+                }
+                tabla.appendChild(fila);
+            }
+
+            contenedorTabla.appendChild(tabla);
+        }
+    </script>
+</body>
+</html>

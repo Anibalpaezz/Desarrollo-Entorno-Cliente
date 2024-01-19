@@ -1,0 +1,14 @@
+body{
+    background-color: antiquewhite;
+    display: flex;
+    justify-content: space-around;
+}
+
+h2 {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+.contenedor {
+    width: 45%;
+    margin: 10px;
+}

@@ -1,0 +1,138 @@
+/*Estilos body*/
+body {
+    background-color: rgb(0, 245, 255);
+}
+
+/* Google Fonts - Poppins */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap");
+
+/*Estilos para el flotante de las cookies*/
+.wrapper {
+    position: fixed;
+    bottom: 50px;
+    right: -370px;
+    max-width: 345px;
+    width: 100%;
+    background: #fff;
+    border-radius: 8px;
+    padding: 15px 25px 22px;
+    transition: right 0.3s ease;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+}
+
+.wrapper.show {
+    right: 20px;
+}
+
+.wrapper header {
+    display: flex;
+    align-items: center;
+    column-gap: 15px;
+}
+
+header i {
+    color: rgb(51, 58, 64);
+    font-size: 32px;
+}
+
+header h2 {
+    color: rgb(51, 58, 64);
+    font-weight: 500;
+}
+
+.wrapper .data {
+    margin-top: 16px;
+}
+
+.wrapper .data p {
+    color: #333;
+    font-size: 16px;
+}
+
+.data p a {
+    color: blue;
+    text-decoration: none;
+}
+
+.data p a:hover {
+    text-decoration: underline;
+}
+
+.wrapper .buttons {
+    margin-top: 16px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.buttons .button {
+    border: none;
+    color: #fff;
+    padding: 8px 0;
+    border-radius: 4px;
+    background: rgb(51, 58, 64);
+    cursor: pointer;
+    width: calc(100% / 2 - 10px);
+    transition: all 0.2s ease;
+}
+
+.buttons #acceptBtn:hover {
+    background-color: rgb(51, 58, 64);
+}
+
+#declineBtn {
+    border: 2px solid rgb(51, 58, 64);
+    background-color: #fff;
+    color: rgb(51, 58, 64);
+}
+
+#declineBtn:hover {
+    background-color: rgb(51, 58, 64);
+    color: #fff;
+}
+
+/*Estilos para la barra superior de navegacion*/
+.navbar {
+    flex-direction: row;
+    /* Horizontal alignment of navigation items */
+    justify-content: center;
+    /* Center-align the items */
+    text-align: center;
+    /* Center-align individual items */
+}
+
+#botones {
+    margin-left: 30px;
+    margin-right: 30px;
+    /* padding: 15px; */
+    color: black;
+}
+
+#foto-logo {
+    flex-direction: row;
+    justify-content: left;
+}
+
+.nav-link {
+    color: white;
+}
+
+.nav-link:hover {
+    color: orangered;
+}
+
+/*Estilos para el pie de pagina*/
+.page-content {
+    min-height: calc(100vh - 60px);
+    padding-bottom: 60px;
+}
+
+#pie-pagina {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 10px;
+    bottom: 0;
+    width: 100%;
+}

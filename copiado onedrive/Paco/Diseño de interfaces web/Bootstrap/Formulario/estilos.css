@@ -1,0 +1,18 @@
+body {
+    background-color: lightcyan;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+header{
+    text-align: center;
+    padding: 15px;
+}
+
+.form-container {
+    max-width: 700px;
+    padding: 20px;
+}

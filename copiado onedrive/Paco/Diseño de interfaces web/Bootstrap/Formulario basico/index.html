@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+    <html lang="en">
+        <head>
+            <meta charset="UTF-8">
+            <meta http-equiv="X-UA-Compatible" content="IE=edge">
+            <link rel="stylesheet" href="./css/bootstrap.min.css">
+            <link rel="shortcut icon" href="favicon logo.png" type="image/x-icon" />
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+            <title>Formulario</title>
+            <style></style>
+        </head>
+        <body style="background-color: rgb(255, 249, 237);">
+            <script src="./js/bootstrap.bundle.js">
+                function validateForm() {
+                // Get the values of the password fields
+                var contraseña1 = document.getElementById("contraseña1").value;
+                var contraseña2 = document.getElementById("contraseña2").value;
+
+                // Check if the passwords match
+                if (contraseña1 !== contraseña2) {
+                    // Display an error message
+                    document.getElementById("passwordError").textContent = "Passwords do not match.";
+                    // Prevent the form from submitting
+                    return false;
+                } else {
+                    // Clear any previous error message
+                    document.getElementById("passwordError").textContent = "";
+                    // Allow the form to submit
+                    return true;
+                }
+            }
+            </script>
+            <script src="codigos.js"></script>
+
+            
+            <div class="text-center" style="padding: 20px; background-color: #472620;">
+                <h1 style="color: white;">Crear tu cuenta de M♥geles<span class="badge rounded" style="background-color: #ffa500;">HUB</span></h1>
+            </div>
+
+            <div class="container rounded" style="background-color:blanchedalmond ; padding: 15px; margin-top: 20px; width: 900px; height: 800px;">
+                <form class="form-group" onsubmit="return validateForm()">
+                    <div class="form-row">
+                        <div class="form-group col-md-3">
+                            <label for="input_name">Nombre</label>
+                            <input type="name" class="form-control" id="input_name" placeholder="Introduce aqui tu nombre">
+                        </div>
+                        <div class="form-group col-md-5">
+                            <label for="input_surname">Apellidos</label>
+                            <input style="border: 1px;" type="surname" class="form-control" id="input_surname" placeholder="Introduce aqui tus apellidos">
+                        </div>
+                        <div class="form-group col-md-4">
+                            <label for="input_surname">Fecha de nacimiento</label>
+                            <input style="border: 1px;" type="date" class="form-control" id="input_surname" placeholder="Fecha de nacimiento">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="example_input_mail">Direccion de correo electronico</label>
+                        <input type="email" class="form-control" id="example_input_mail" aria-describedby="email_help" placeholder="Introduce aqui el email">
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                            <label for="example-input_password">Contraseña</label>
+                            <input type="password" class="form-control" id="contraseña1" placeholder="Introduce aqui la contraseña" name="contraseña1">
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="example-input_password">Repita la contraseña</label>
+                            <input type="password" class="form-control" id="contraseña2" placeholder="Vuelve a introducir la contraseña" name="contraseña2">
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group col-md-5">
+                            <label for="Codigo_postal">Provincia</label>
+                            <input type="text" class="form-control" placeholder="Introduce tu provincia" name="Provincia">
+                        </div>
+                        <div class="form-group col-md-5">
+                            <label for="Codigo_postal">Ciudad</label>
+                            <input type="text" class="form-control" placeholder="Introduce tu ciudad" name="Ciudad">
+                        </div>
+                        <div class="form-group col-md-2">
+                            <label for="Codigo_postal">Codigo postal</label>
+                            <input type="text" class="form-control" placeholder="XXXXX" name="Codigo_postal" pattern="[0-9]{5}">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="form-row">
+                            <div class="form-group col-md-9">
+                                <label for="example_input_mail">Linea de direccion 1</label>
+                                <input type="email" class="form-control" id="example_input_mail" aria-describedby="direccion1" placeholder="Direccion principal">
+                            </div>
+                            <div class="form-group col-md-3">
+                                <label for="inputState">Tipo de vivienda</label>
+                                <select name="vivienda" id="inputState" class="form-control">
+                                    <option selected>Seleccione</option>
+                                    <option>Chalet</option>
+                                    <option>Piso</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="example_input_mail">Linea de direccion 2</label>
+                        <input type="email" class="form-control" id="example_input_mail" aria-describedby="direccion2" placeholder="Opcional">
+                    </div>
+                    <!-- <div class="text-center">
+                        <button onclick="alerta()" class="btn" style="background-color: darkslateblue; color: white;">Alerta</button>
+                        <button onclick="cuadro_texto()" class="btn" style="background-color: darkslateblue; color: white;">Texto</button>
+                    </div> -->
+                </form>
+                <button onclick="alerta()" style="background-color: darkslateblue; color: white;">Alerta</button>
+                        <button onclick="texto()" style="background-color: darkslateblue; color: white;">Texto</button>
+            </div>
+        </body>
+</html>

@@ -1,0 +1,91 @@
+@import url(https://fonts.googleapis.com/css2?family=Rubik:wght@700&display=swap);
+
+/*Estilos de la cabecera de pagina*/
+body{background-color:#f0f0ff;width:98.04%}#btn-box{background-color:#fff;border-radius:80px;height:41px;padding:1px;margin:1px}#btn-btn{font-size:15px;font-weight:700;border:none}#actual{color:#ffc107}#btn-btn-log{color:#000;position:relative;width:max-content;font-size:13px;font-weight:700}#btn-btn-log:after{content:"";position:absolute;background-color:#000;height:3px;width:0%;left:31px;bottom:0;transition:.2s}#btn-btn-log:hover:after{width:46%}#btn-box:hover{background-color:#000;color:#fff}a,a:hover{color:#fff}#logo-container,#profile-container{display:flex;align-items:center}#logo-izq{width:75%;margin-right:auto}#profile-der{margin-left:auto}.jw-album-image img,.jw-element-image img{pointer-events:none;-webkit-touch-callout:none}.pswp__share-tooltip .pswp__share--download{display:none}.back-to-top{border-radius:100%;width:40px;height:40px;position:fixed;right:2rem;bottom:2rem;cursor:pointer;opacity:100%;transition:opacity .5s;border:none;background-color:#000}.back-to-top:hover{opacity:60%}.hidden{opacity:0%}
+
+/*Estilos de pie de pagina*/
+.page-content{min-height:calc(100vh - 60px);padding-bottom:60px}#pie-pagina{padding:10px;bottom:0;width:100vw}.jw-album-image img,.jw-element-image img{pointer-events:none;-webkit-touch-callout:none}.pswp__share-tooltip .pswp__share--download{display:none}
+
+
+
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+.contenedor{
+    margin-top: 5.75vw;
+}
+
+.carousel {
+    width: 80vw;
+    height: 87.6vh;
+    margin: 0 auto;
+    /* Center the carousel horizontally */
+    position: relative;
+}
+
+.carousel > ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.slide {
+    position: absolute;
+    inset: 0;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+    /* Added transition for opacity */
+    transition-delay: 200ms;
+}
+
+.slide>img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.slide[data-active] {
+    opacity: 1;
+    z-index: 1;
+    transition-delay: 0ms;
+}
+
+.carousel-button {
+    position: absolute;
+    z-index: 2;
+    background: none;
+    border: none;
+    font-size: 26px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    border-radius: .25rem;
+    padding: 0 .5rem;
+    background-color: rgba(0, 0, 0, 0.2);
+}
+
+.carousel-button:hover,
+.carousel-button:focus {
+    background-color: rgba(0, 0, 0, 0.8);
+    color: #ffc107;
+    outline: 1px solid #ffc107;
+}
+
+.carousel-button:focus {
+    outline: 1px solid #ffc107;
+}
+
+.carousel-button.prev {
+    left: 1rem;
+}
+
+.carousel-button.next {
+    right: 1rem;
+}
+
+.slide.zoomed img {
+    transform: scale(2); /* Adjust the scale factor as needed */
+}

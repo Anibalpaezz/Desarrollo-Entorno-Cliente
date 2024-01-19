@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <link rel="stylesheet" href="../../bootstrap/estilos/bootstrap.min.css"> -->
+    <script src="https://kit.fontawesome.com/1fc2f73a0d.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <link rel="stylesheet" href="estilos.css">
+</head>
+
+<body>
+    <div class="wrapper">
+        <form action="">
+            <h1>Sign Up</h1>
+            <div class="input-box">
+                <input type="text" id="DNI" placeholder="DNI" maxlength="9" autofocus required>
+                <input type="text" id="telefono" placeholder="NºTelefono" maxlength="12" required disabled>
+            </div>
+            <div class="input-box">
+                <input type="text" id="nombre" placeholder="Nombre" maxlength="25" required disabled>
+                <input type="text" id="apellido" placeholder="Apellido" maxlength="25" disabled required>
+            </div>
+            <div class="input-box">
+                <input type="email" id="email" placeholder="Email" disabled>
+                <input type="text" id="fecha" data-provide="datepicker" placeholder="dd/mm/yy" required disabled>
+            </div>
+            <div class="input-box">
+                <input type="password" id="contraseña" placeholder="Contraseña" maxlength="6" required disabled>
+                <input type="password" id="contraseña" placeholder="Repetir contraseña" maxlength="20" required disabled>
+            </div>
+            <button id="enviar" class="btn">Login</button>
+            <div class="register-link">
+                <p>Tienes cuenta? <a href="../sesion/sesion.html">Inicia Sesion</a></p>
+            </div>
+        </form>
+    </div>
+
+    <script src="../../bootstrap/script/bootstrap.min.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>

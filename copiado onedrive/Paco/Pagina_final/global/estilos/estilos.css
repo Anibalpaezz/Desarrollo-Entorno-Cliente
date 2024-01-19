@@ -1,0 +1,2 @@
+.jw-album-image img, .jw-element-image img { pointer-events: none; -webkit-touch-callout: none; }
+.pswp__share-tooltip .pswp__share--download { display: none; }
