@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Select con Ajax</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+<body>
+
+<script>
+  // Datos de las ciudades por continente
+  var ciudadesPorContinente = {
+    Asia: ["Afganistán", "Arabia Saudí", "Armenia", "Azerbaiyán", "Bangladés", "Baréin", "Birmania"],
+    Antartida: ["Amundsen-Scott", "McMurdo", "Palmer", "Dumont D'Urville", "Bharathi"],
+    Europa: ["Andorra", "Armenia", "Austria", "Azerbaiyán", "Bélgica", "Bielorrusia", "Bosnia y Herzegovina", "Bulgaria"],
+    Africa: ["Guinea-Bisáu", "Guinea Ecuatorial", "República de Guinea Ecuatorial", "Kenia", "Lesoto", "Maseru", "Liberia", "Monrovia", "Libia", "Madagascar", "Malaui", "República de Malaui", "Malí"],
+    Oceania: ["Sídney", "Melbourne", "Brisbane", "Perth", "Auckland", "Adelaida"],
+    America: ["Estados Unidos", "Brasil", "Canadá", "México", "Chile", "Argentina", "Colombia", "Panamá", "Perú", "Uruguay", "República Dominicana", "Puerto Rico"]
+  };
+
+  // Crear el select de continentes
+  var selectContinentes = $("<select>").attr("id", "continentes").appendTo("body");
+
+  // Llenar el select de continentes
+  $.each(ciudadesPorContinente, function (continente) {
+    $("<option>").val(continente).text(continente).appendTo(selectContinentes);
+  });
+
+  // Crear el select de ciudades
+  var selectCiudades = $("<select>").attr("id", "ciudades").appendTo("body");
+
+  // Manejar el evento clic en el select de continentes
+  selectContinentes.on("change", function () {
+    var continenteSeleccionado = $(this).val();
+    var ciudades = ciudadesPorContinente[continenteSeleccionado];
+
+    // Limpiar el select de ciudades
+    selectCiudades.empty();
+
+    // Llenar el select de ciudades
+    $.each(ciudades, function (index, ciudad) {
+      $("<option>").val(ciudad).text(ciudad).appendTo(selectCiudades);
+    });
+  });
+
+  // Crear el elemento para mostrar la información de la población
+  var infoPoblacion = $("<div>").attr("id", "info").appendTo("body");
+  $("<h2>").text("Información de la población:").appendTo(infoPoblacion);
+  $("<p>").attr("id", "poblacion").appendTo(infoPoblacion);
+
+  // Manejar el evento clic en el select de ciudades para mostrar la información
+  selectCiudades.on("change", function () {
+    var ciudadSeleccion
