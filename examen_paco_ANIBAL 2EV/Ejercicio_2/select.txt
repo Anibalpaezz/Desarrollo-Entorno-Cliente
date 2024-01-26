@@ -1,4 +1,4 @@
-<select tabindex="5" class="imputs" id="marca2">
+<select tabindex="5" class="imputs" id="marca2" multiple>
         <option value="marca" selected>marca</option>
         <option value="coches-de-segunda-mano">TODOS</option>
         <option value="alfa-romeo-de-segunda-mano">Alfa Romeo</option>

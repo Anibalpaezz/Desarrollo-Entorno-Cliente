@@ -6,10 +6,10 @@ selectContinentes.id = "continentes";
 selectContinentes.addEventListener("change", cargarCiudades);
 
 for (let i = 0; i < continentes.length; i++) {
-    let option = document.createElement("option");
-    option.value = continentes[i];
-    option.text = continentes[i];
-    selectContinentes.appendChild(option);
+    let opcion = document.createElement("opcion");
+    opcion.value = continentes[i];
+    opcion.text = continentes[i];
+    selectContinentes.appendChild(opcion);
 }
 
 let selectCiudades = document.createElement("select");
@@ -33,10 +33,10 @@ function cargarCiudades() {
         if (xhr.status === 200) {
             let ciudades = xhr.responseText.split(",");
             for (let i = 0; i < ciudades.length; i++) {
-                let option = document.createElement("option");
-                option.value = ciudades[i];
-                option.text = ciudades[i];
-                selectCiudades.appendChild(option);
+                let opcion = document.createElement("opcion");
+                opcion.value = ciudades[i];
+                opcion.text = ciudades[i];
+                selectCiudades.appendChild(opcion);
             }
             titulosCiudades.push(continenteSeleccionado);
         } else {

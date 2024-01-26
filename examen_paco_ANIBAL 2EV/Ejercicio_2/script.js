@@ -3,7 +3,7 @@ function cargarSelect() {
 
     xhr.onreadystatechange = function () {
         if (xhr.readyState === 4 && xhr.status === 200) {
-            document.getElementById("selectContainer").innerHTML =
+            document.getElementById("contselect").innerHTML =
                 xhr.responseText;
 
             asignarFunciones();
@@ -22,12 +22,12 @@ function asignarFunciones() {
 
 function subirElemento() {
     var select = document.getElementById("marca2");
-    var selectedOption = select.options[select.selectedIndex];
+    var seleccionado = select.options[select.selectedIndex];
 
-    if (selectedOption && selectedOption.previousElementSibling) {
+    if (seleccionado && seleccionado.previousElementSibling) {
         select.insertBefore(
-            selectedOption,
-            selectedOption.previousElementSibling
+            seleccionado,
+            seleccionado.previousElementSibling
         );
         actualizarBotones();
     }
@@ -35,26 +35,26 @@ function subirElemento() {
 
 function bajarElemento() {
     var select = document.getElementById("marca2");
-    var selectedOption = select.options[select.selectedIndex];
+    var seleccionado = select.options[select.selectedIndex];
 
-    if (selectedOption && selectedOption.nextElementSibling) {
+    if (seleccionado && seleccionado.nextElementSibling) {
         select.insertBefore(
-            selectedOption.nextElementSibling,
-            selectedOption
+            seleccionado.nextElementSibling,
+            seleccionado
         );
         actualizarBotones();
-    } 
+    }
 }
 
 function actualizarBotones() {
     var select = document.getElementById("marca2");
-    var selectedOption = select.options[select.selectedIndex];
+    var seleccionado = select.options[select.selectedIndex];
 
     document.querySelector("button:nth-of-type(1)").disabled =
-        !selectedOption || !selectedOption.previousElementSibling;
+        !seleccionado || !seleccionado.previousElementSibling;
 
     document.querySelector("button:nth-of-type(2)").disabled =
-        !selectedOption || !selectedOption.nextElementSibling;
+        !seleccionado || !seleccionado.nextElementSibling;
 }
 
 window.onload = cargarSelect;

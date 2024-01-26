@@ -1,21 +1,6 @@
-.loader-container {
-    width: 500px;
-    height: 5px;
-    overflow: hidden;
-}
-
-.loader-bar {
-    height: 100%;
+#barraCarga {
     width: 0;
-    background-color: #3498db;
-    animation: progress 10s steps(10) infinite;
-}
-
-@keyframes progress {
-    0%, 100% {
-        width: 0;
-    }
-    50% {
-        width: 500px;
-    }
+    height: 10px;
+    background-color: brown;
+    margin: 20px;
 }
