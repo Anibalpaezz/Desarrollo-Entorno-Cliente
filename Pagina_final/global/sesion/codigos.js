@@ -17,10 +17,8 @@ function toogle() {
 }
 
 function cambiarSiguienteBotonVerde() {
-    // Obtén el siguiente botón con la clase fa-regular fa-circle
     const regularButton = document.querySelector('.fa-regular.fa-circle');
 
-    // Si hay un botón, cámbiale la clase y el color
     if (regularButton) {
         regularButton.className = 'fa-solid fa-circle-xmark';
         regularButton.style.color = 'green';
@@ -48,7 +46,6 @@ function numerosRandom() {
                 console.log("Ya se han pulsado 3 números. Limite alcanzado.");
             }
 
-            // Llama a la función para enviar la solicitud al servidor después de haber recopilado los valores
             if (pulsados.length === 3) {
                 enviarSolicitudAlServidor(pulsados);
             }
@@ -58,29 +55,26 @@ function numerosRandom() {
 
 function enviarSolicitudAlServidor(pulsados) {
     let inputUsuario = document.getElementById("usuarioInput");
+    let valor = inputUsuario.value; // Move this line outside the event listener
 
-    // Agrega un evento de cambio al input
     inputUsuario.addEventListener("input", function() {
-        // Recoge el valor del input
-        let valor = inputUsuario.value;
+        valor = inputUsuario.value;
     });
-    // Datos que deseas enviar al servidor
+
     var datos = {
         pulsados: pulsados,
-        valor
+        valor: valor // Now, valor is accessible within the entire function
     };
 
-    // Configuración de la solicitud HTTP
     var configuracion = {
-        method: "POST", // Método de la solicitud
+        method: "POST",
         headers: {
-            "Content-Type": "application/json", // Tipo de contenido que estás enviando
+            "Content-Type": "application/json",
         },
-        body: JSON.stringify(datos), // Convierte los datos a formato JSON
+        body: JSON.stringify(datos),
     };
 
-    // Realiza la solicitud HTTP al script PHP en el servidor
-    fetch("tuscript.php", configuracion)
+    fetch("hola.php", configuracion)
         .then((response) => response.json())
         .then((data) => {
             console.log("Respuesta del servidor:", data);
@@ -89,6 +83,7 @@ function enviarSolicitudAlServidor(pulsados) {
             console.error("Error al enviar la solicitud:", error);
         });
 }
+
 
 function pinRandom() {
     console.log("pinRandom function called");
