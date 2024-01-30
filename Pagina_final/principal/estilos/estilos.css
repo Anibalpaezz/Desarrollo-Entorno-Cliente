@@ -436,3 +436,5 @@ header h2 {
 #ubi{
     cursor: pointer;
 }
+
+@import url(https://fonts.googleapis.com/css2?family=Rubik:wght@700&display=swap);#loader{z-index: 110;position:absolute;top:0;left:0;background:#000;backdrop-filter:blur(10px);box-shadow:0 0 20px rgba(0,0,0,.5);height:100%;width:100%;display:flex;flex-direction:column;gap:1.5rem;align-items:center;justify-content:center;color:#191654}#svg{height:325px;width:325px;stroke:#ffc107;fill-opacity:0;stroke-width:1.5px;stroke-dasharray:4500;animation:1.5s ease-in-out infinite draw}@keyframes draw{from{stroke-dashoffset:4500}to{stroke-dashoffset:4000}}.name-container{height:30px;overflow:hidden;font-family:Rubik,sans-serif}.logo-name{color:#ffc107;font-size:30px;letter-spacing:12px;text-transform:uppercase;margin-left:20px;font-weight:bolder}
