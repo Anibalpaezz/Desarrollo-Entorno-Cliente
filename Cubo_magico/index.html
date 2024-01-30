@@ -8,55 +8,68 @@
     <style>
         table {
             border-collapse: collapse;
-            margin: 20px;
         }
 
         td {
             border: 1px solid #000;
             width: 30px;
             height: 30px;
-            text-align: center;
+            font-weight: bold;
+            font-size: 14px;
+        }
+
+        .suma {
+            font-weight: bold;
+            font-size: 16px;
         }
     </style>
 </head>
 
 <body>
-
-    <h2>Generador de Cuadrados Mágicos</h2>
-
-    <label for="orden">Introduce el orden del cuadrado mágico (n): </label>
-    <input type="number" id="orden" min="3" step="2" value="3">
+    <label for="tamaño">Numero de filas y columnas</label>
+    <input type="number" id="tamaño" min="3" step="2" value="3">
     <button onclick="generarCuadradoMagico()">Generar</button>
 
     <table id="cuadradoMagico"></table>
+    <div id="sumas"></div>
 
     <script>
         function generarCuadradoMagico() {
-            const orden = parseInt(document.getElementById("orden").value);
-            if (orden % 2 === 0) {
-                alert("El orden debe ser impar para generar un cuadrado mágico.");
+            const tamaño = parseInt(document.getElementById("tamaño").value);
+            if (tamaño % 2 === 0) {
+                alert("El tamaño debe ser impar para generar un cuadrado mágico.");
                 return;
             }
 
-            const cuadrado = new Array(orden).fill(0).map(() => new Array(orden).fill(0));
-            let i = 0, j = Math.floor(orden / 2);
+            const cuadrado = new Array(tamaño).fill(0).map(() => new Array(tamaño).fill(0));
+            let fila = Math.floor(tamaño / 2) - 1, columna = Math.floor(tamaño / 2);
 
-            for (let num = 1; num <= orden * orden; num++) {
-                cuadrado[i][j] = num;
-                i -= 1;
-                j += 1;
+            for (let num = 1; num <= tamaño * tamaño; num++) {
+                cuadrado[fila][columna] = num;
 
-                if (num % orden === 0) {
-                    i += 2;
-                    j -= 1;
-                } else if (i < 0) {
-                    i = orden - 1;
-                } else if (j === orden) {
-                    j = 0;
+                if (tamaño % 3 === 0) {
+                    if (num % tamaño === 0) {
+                        fila = (fila - 1) % tamaño;
+                        columna = (columna - 1 + tamaño) % tamaño;
+                    } else {
+                        fila = (fila - 1 + tamaño) % tamaño;
+                        columna = (columna + 1) % tamaño;
+                    }
+                } else if (tamaño % 3 !== 0) {
+                    if (num % tamaño === 0) {
+                        fila = (fila -1 ) % tamaño;
+                        columna = (columna - 1 + tamaño) % tamaño;
+                    } else {
+                        fila = (fila - 1 + tamaño) % tamaño;
+                        columna = (columna + 1) % tamaño;
+                    }
+                } else {
+                    alert("Algo has hecho mal");
                 }
-            }
 
-            mostrarCuadradoMagico(cuadrado);
+                mostrarCuadradoMagico(cuadrado);
+                calcularSumas(cuadrado);
+            }
         }
 
         function mostrarCuadradoMagico(cuadrado) {
@@ -72,6 +85,25 @@
                 }
                 tabla.appendChild(tr);
             }
+        }
+
+        function calcularSumas(cuadrado) {
+            const sumasFila = cuadrado.map(fila => fila.reduce((acumulador, num) => acumulador + num, 0));
+            const sumasColumna = cuadrado.reduce((acumulador, fila) =>
+                fila.map((num, index) => (acumulador[index] || 0) + num), []);
+
+            const sumasContainer = document.getElementById("sumas");
+            sumasContainer.innerHTML = "";
+
+            const filaSumaElement = document.createElement("div");
+            filaSumaElement.className = "suma";
+            filaSumaElement.textContent = "Suma de cada fila: " + sumasFila.join(", ");
+            sumasContainer.appendChild(filaSumaElement);
+
+            const columnaSumaElement = document.createElement("div");
+            columnaSumaElement.className = "suma";
+            columnaSumaElement.textContent = "Suma de cada columna: " + sumasColumna.join(", ");
+            sumasContainer.appendChild(columnaSumaElement);
         }
     </script>
 
