@@ -1,0 +1,57 @@
+@import url('https://fonts.googleapis.com/css2?family=Honk&display=swap');
+
+* {
+    text-align: center;
+    justify-content: center;
+}
+
+div {
+    text-align: center;
+    justify-content: center;
+}
+
+h1 {
+    text-align: center;
+    font-family: 'Honk', system-ui;
+    font-size: 58px;
+}
+
+table {
+    text-align: center;
+    border-collapse: collapse;
+}
+
+.card {
+    width: 64px;
+    height: 64px;
+    border: 1px solid orange;
+    cursor: pointer;
+}
+
+/* td {
+    background-image: url('/IMAGENES/foto.png');
+} */
+
+img {
+    visibility: hidden;
+}
+
+/* table{
+    text-align: center;
+}
+
+td{
+    border: 1px solid red;
+    height: 64px;
+    width: 64px;
+    max-height: 64px;
+    max-width: 64px;
+}
+
+div{
+    text-align: center;
+}
+
+img{
+    display: none; 
+} */

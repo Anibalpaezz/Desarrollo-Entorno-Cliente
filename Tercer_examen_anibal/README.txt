@@ -1,0 +1,1 @@
+En mi ejercicio he creado una funcion para sacar un numero random con unos limites. Luego he creado la funcion de las imagenes que selecionad el valor que sale del select y en funcion del valor accede a una carpeta u otra el numero de veces que yo le he proporcionado en este caso 16 veces porque va a sacar 8 fotos dos veces. Luego genero 4 filas y 4 columnas para rellenar
