@@ -1,10 +1,7 @@
 let intentos = 0;
 let primeraCarta = null;
 
-function getRandomNumber(min, max) {
-    return Math.floor(Math.random() * (max - min + 1)) + min;
-}
-
+//Leo la carpeta de imagenes y las pongo aleatorias
 function cargarImagenes() {
     let tematica = document.getElementById("tema");
     let seleccionado = tematica.options[tematica.selectedIndex].value;
@@ -68,6 +65,7 @@ function shuffle(array) {
     return array.sort(() => Math.random() - 0.5);
 }
 
+//Funcion para dar la vuelta a las cartas
 function handleCardClick(event) {
     console.log('Funcion llamada');
     const card = event.currentTarget;
