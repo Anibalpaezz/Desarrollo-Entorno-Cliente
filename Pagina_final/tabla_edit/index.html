@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tabla Editable</title>
+<style>
+    table {
+        border-collapse: collapse;
+        width: 100%;
+    }
+    th, td {
+        border: 1px solid black;
+        padding: 8px;
+        text-align: left;
+    }
+</style>
+</head>
+<body>
+
+<h2>Tabla Editable</h2>
+
+<table id="data-table">
+    <thead>
+        <tr>
+            <th>Nombre</th>
+            <th>Descripción</th>
+        </tr>
+    </thead>
+    <tbody>
+    </tbody>
+</table>
+
+<script>
+    // Function to fetch data from the server
+    function fetchData() {
+        fetch('hola.php')
+        .then(response => response.json())
+        .then(data => {
+            const tbody = document.querySelector('#data-table tbody');
+            tbody.innerHTML = '';
+
+            data.forEach(row => {
+                const tr = document.createElement('tr');
+                tr.innerHTML = `
+                    <td contenteditable="true">${row.nombre}</td>
+                    <td contenteditable="true">${row.descripcion}</td>
+                `;
+                tbody.appendChild(tr);
+            });
+        });
+    }
+
+    // Fetch data when the page loads
+    document.addEventListener('DOMContentLoaded', () => {
+        fetchData();
+    });
+</script>
+
+</body>
+</html>
