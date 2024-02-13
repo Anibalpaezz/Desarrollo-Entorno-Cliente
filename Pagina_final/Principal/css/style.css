@@ -45,16 +45,16 @@ video {
 }
 
 #coche {
-    background-image: url(../../global/fotos/citroen.jpg);
+    background-image: url(../../Images/citroen.jpg);
     background-size: cover
 }
 
 #catering {
-    background-image: url(../../global/fotos/catering5k.jpg)
+    background-image: url(../../Images/catering5k.jpg)
 }
 
 #baile {
-    background-image: url(../../global/fotos/baile4k.jpg)
+    background-image: url(../../Images/baile4k.jpg)
 }
 
 .card:focus-within .card-content, .card:hover .card-content {
@@ -158,71 +158,6 @@ video {
 .pswp__share-tooltip .pswp__share--download {
     display: none;
 }
-
-
-
-
-
-
-/*  .contaniner-search {
-    position: absolute;
-    left: 48%;
-    top: 800px;
-    transform: translate(-50%, -50%);
-    padding: 10px;
-}
-
-.input-search {
-    outline: none;
-    box-sizing: border-box;
-    height: 60px;
-    width: 0;
-    padding: 0 20px;
-    color: black;
-    border-radius: 20px;
-    font-size: 20px;
-    border: 1px solid red;
-}
-
-::placeholder{
-    color: grey;
-}
-
-.butn {
-    position: absolute;
-    right: 0;
-    top: 0;
-    width: 80px;
-    height: 80px;
-    background-color: aqua;
-    line-height: 80px;
-    border-radius: 25px;
-    cursor: pointer;
-    transition: .5s;
-}
-
-.butn #lupa {
-    font-size: 25px;
-    color: white;
-    line-height: 80px;
-    transition: all .7s ease
-}
-
-.contaniner-search:hover .input-search {
-    width: 150px;
-}
-
-.contaniner-search:hover #lupa {
-    transform: rotate(-360deg);
-}
-
-.butn:hover {
-    background: #00f;
-}  */
-
-
-
-
 
 #btn-box {
     background-color: white;
