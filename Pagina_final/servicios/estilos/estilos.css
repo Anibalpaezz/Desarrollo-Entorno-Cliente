@@ -1,7 +1,0 @@
-@import url(https://fonts.googleapis.com/css2?family=Rubik:wght@700&display=swap);
-
-/*Estilos de la cabecera de pagina*/
-body{background-color:#f0f0ff;width:98.04%}#btn-box{background-color:#fff;border-radius:80px;height:41px;padding:1px;margin:1px}#btn-btn{font-size:15px;font-weight:700;border:none}#actual{color:#ffc107}#btn-btn-log{color:#000;position:relative;width:max-content;font-size:13px;font-weight:700}#btn-btn-log:after{content:"";position:absolute;background-color:#000;height:3px;width:0%;left:31px;bottom:0;transition:.2s}#btn-btn-log:hover:after{width:46%}#btn-box:hover{background-color:#000;color:#fff}a,a:hover{color:#fff}#logo-container,#profile-container{display:flex;align-items:center}#logo-izq{width:75%;margin-right:auto}#profile-der{margin-left:auto}.jw-album-image img,.jw-element-image img{pointer-events:none;-webkit-touch-callout:none}.pswp__share-tooltip .pswp__share--download{display:none}.back-to-top{border-radius:100%;width:40px;height:40px;position:fixed;right:2rem;bottom:2rem;cursor:pointer;opacity:100%;transition:opacity .5s;border:none;background-color:#000}.back-to-top:hover{opacity:60%}.hidden{opacity:0%}
-
-/*Estilos de pie de pagina*/
-.page-content{min-height:calc(100vh - 60px);padding-bottom:60px}#pie-pagina{padding:10px;bottom:0;width:102%}.jw-album-image img,.jw-element-image img{pointer-events:none;-webkit-touch-callout:none}.pswp__share-tooltip .pswp__share--download{display:none}

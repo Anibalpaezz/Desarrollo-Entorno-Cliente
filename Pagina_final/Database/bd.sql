@@ -71,8 +71,7 @@ UPDATE coches SET
 WHERE matricula = 'HG-7890-IJ';
 
 
-
-CREATE TABLE servicios (
+CREATE TABLE catering (
     ID INT auto_increment primary key,
     categoria VARCHAR(50),
     estilo VARCHAR(50) unique,
@@ -84,23 +83,52 @@ CREATE TABLE servicios (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 
-INSERT INTO servicios (categoria, estilo, compañia, es_grupo, precio_hora, opciones, disponibilidad) VALUES
+INSERT INTO catering (categoria, estilo, compañia, es_grupo, precio_hora, opciones, disponibilidad) VALUES
+('Catering', 'Buffet', 'Delicious Delights', false, 80.0, 'Menú personalizado', true),
+('Catering', 'Gourmet', 'Gastronomy Galore', false, 120.0, 'Degustación exclusiva', true),
+('Catering', 'Vegano', 'Green Eats', false, 90.0, 'Opciones veganas', true),
+('Catering', 'Barbacoa', 'Sizzling BBQ', false, 100.0, 'Asado al aire libre', true),
+('Catering', 'Postres', 'Sweet Temptations', false, 60.0, 'Barra de postres', true);
+INSERT INTO catering (categoria, estilo, compañia, es_grupo, precio_hora, opciones, disponibilidad) VALUES
+('Catering', 'Italiano', 'Mamma Mia Catering', false, 95.0, 'Auténtica cocina italiana', true),
+('Catering', 'Asiático', 'Asian Delights', false, 110.0, 'Sushi y platos asiáticos', true),
+('Catering', 'Mexicano', 'Spicy Fiesta', false, 85.0, 'Tacos y comida mexicana', true),
+('Catering', 'Vegetariano', 'Green Cuisine', false, 75.0, 'Opciones vegetarianas', true),
+('Catering', 'Desayuno', 'Morning Bliss Catering', false, 65.0, 'Buffet de desayuno', true);
+
+
+CREATE TABLE bailes (
+    ID INT auto_increment primary key,
+    categoria VARCHAR(50),
+    estilo VARCHAR(50) unique,
+    compañia VARCHAR(50),
+    es_grupo BOOLEAN,
+    precio_hora double,
+    opciones VARCHAR(75),
+    disponibilidad BOOLEAN
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+INSERT INTO bailes (categoria, estilo, compañia, es_grupo, precio_hora, opciones, disponibilidad) VALUES
 ('Grupo de baile', 'Salsa', 'SalsaManía', true, 50.0, 'Coreografía personalizada', true),
-('Cantante', 'Jazz', 'Jazzy Vocals', false, 75.0, 'Repertorio clásico de jazz', true),
-('Grupo de música', 'Rock', 'Rock&Roll Band', true, 100.0, 'Amplificación incluida', true),
-('Entretenimiento', 'Magia', 'Magic Moments', false, 120.0, 'Ilusiones espectaculares', true),
-('Grupo de baile', 'Hip-hop', 'Hip-Hop Crew', true, 60.0, 'Street dance', true);
-INSERT INTO servicios (categoria, estilo, compañia, es_grupo, precio_hora, opciones, disponibilidad) VALUES
-('Cantante', 'Pop', 'PopStar Entertainment', false, 90.0, 'Éxitos actuales y clásicos', true),
-('Grupo de música', 'Folk', 'Folk Fusion', true, 80.0, 'Instrumentos acústicos', true),
-('Entretenimiento', 'Malabarismo', 'Juggling Masters', false, 110.0, 'Espectáculo de fuego', true),
+('Grupo de baile', 'Hip-hop', 'Hip-Hop Crew', true, 60.0, 'Street dance', true),
 ('Grupo de baile', 'Tango', 'Tango Passion', true, 70.0, 'Baile sensual', true),
-('Cantante', 'R&B', 'Rhythm&Blues Diva', false, 100.0, 'Repertorio soul y R&B', true);
+('Grupo de baile', 'Flamenco', 'Flamenco Fusion', true, 80.0, 'Pasión flamenca', true),
+('Grupo de baile', 'Contemporáneo', 'Modern Moves', true, 70.0, 'Danza contemporánea', true);
+INSERT INTO bailes (categoria, estilo, compañia, es_grupo, precio_hora, opciones, disponibilidad) VALUES
+('Grupo de baile', 'Bollywood', 'Bolly Beats', true, 80.0, 'Coreografías de Bollywood', true),
+('Grupo de baile', 'Swing', 'Swing Sensation', true, 75.0, 'Baile de swing vintage', true),
+('Grupo de baile', 'Irish Dance', 'Celtic Rhythms', true, 90.0, 'Baile irlandés tradicional', true),
+('Grupo de baile', 'Ballroom', 'Elegance Ballroom', true, 100.0, 'Baile de salón clásico', true),
+('Grupo de baile', 'Breakdance', 'Breakthrough Crew', true, 85.0, 'Espectáculo de breakdance', true);
+
+
 
 CREATE TABLE facturas (
     ID INT auto_increment primary key,
     coche_id INT,
-    servicio_id INT,
+    catering_id INT,
+    baile_id INT,
     FOREIGN KEY (coche_id) REFERENCES coches(ID),
-    FOREIGN KEY (servicio_id) REFERENCES servicios(ID)
+    FOREIGN KEY (catering_id) REFERENCES catering(ID),
+    FOREIGN KEY (baile_id) REFERENCES bailes(ID)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
