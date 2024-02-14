@@ -39,18 +39,38 @@ CREATE TABLE coches (
     precio_hora double,
     plazas TINYINT,
     opciones VARCHAR(75),
+    foto varchar(50),
     disponibilidad BOOLEAN
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
-INSERT INTO coches (categoria, matricula, marca, modelo, precio_hora, plazas, opciones, disponibilidad) VALUES
-('Histórico', 'PQR678', 'Bentley', 'Type R', 35.0, 4, 'Flores y decoración', true),
-('Histórico', 'STU901', 'Rolls-Royce', 'Silver Cloud', 40.0, 4, 'Flores y decoración', true);
-INSERT INTO coches (categoria, matricula, marca, modelo, precio_hora, plazas, opciones, disponibilidad) VALUES
-('Histórico', 'ABC123', 'Ford', 'Model T', 20.0, 2, 'Flores y decoración', true),
-('Histórico', 'DEF456', 'Volkswagen', 'Beetle', 18.0, 4, 'Flores y decoración', true),
-('Histórico', 'GHI789', 'Fiat', '500', 15.0, 4, 'Flores y decoración', true),
-('Histórico', 'JKL012', 'Chevrolet', 'Bel Air', 25.0, 6, 'Flores y decoración', true),
-('Histórico', 'MNO345', 'Mercedes-Benz', '300 SL', 30.0, 2, 'Flores y decoración', true);
+INSERT INTO coches (categoria, matricula, marca, modelo, precio_hora, plazas, opciones, foto, disponibilidad) VALUES
+('Histórico', 'PQR678', 'Bentley', 'Type R', 35.0, 4, 'Flores y decoración', '../Images/coches/bentley_type_r.jpg', true),
+('Histórico', 'STU901', 'Rolls-Royce', 'Silver Cloud', 40.0, 4, 'Flores y decoración', '../Images/coches/rolls_royce_silver_cloud.jpg', true);
+
+INSERT INTO coches (categoria, matricula, marca, modelo, precio_hora, plazas, opciones, foto, disponibilidad) VALUES
+('Histórico', 'ABC123', 'Ford', 'Model T', 20.0, 2, 'Flores y decoración', '../Images/coches/ford_model_t.jpg', true),
+('Histórico', 'DEF456', 'Volkswagen', 'Beetle', 18.0, 4, 'Flores y decoración', '../Images/coches/volkswagen_beetle.jpeg', true),
+('Histórico', 'GHI789', 'Fiat', '500', 15.0, 4, 'Flores y decoración', '../Images/coches/fiat_500.jpg', true),
+('Histórico', 'JKL012', 'Chevrolet', 'Bel Air', 25.0, 6, 'Flores y decoración', '../Images/coches/chevrolet_bel_air.jpg', true),
+('Histórico', 'MNO345', 'Mercedes-Benz', '300 SL', 30.0, 2, 'Flores y decoración', '../Images/coches/mercedes_benz_300_sl.jpg', true);
+
+UPDATE coches SET matricula = 'HM-1234-AB' WHERE matricula = 'PQR678';
+UPDATE coches SET matricula = 'HR-5678-CD' WHERE matricula = 'STU901';
+UPDATE coches SET matricula = 'HA-9012-BC' WHERE matricula = 'ABC123';
+UPDATE coches SET matricula = 'HD-3456-EF' WHERE matricula = 'DEF456';
+UPDATE coches SET matricula = 'HG-7890-IJ' WHERE matricula = 'GHI789';
+UPDATE coches SET matricula = 'HJ-0123-KL' WHERE matricula = 'JKL012';
+UPDATE coches SET matricula = 'HM-3456-NO' WHERE matricula = 'MNO345';
+UPDATE coches SET
+    marca = 'Buick',
+    modelo = 'Super',
+    precio_hora = 22.0,
+    plazas = 6,
+    opciones = 'Flores y decoración',
+    foto = '../Images/coches/buick_super_1940.jpeg'
+WHERE matricula = 'HG-7890-IJ';
+
+
 
 CREATE TABLE servicios (
     ID INT auto_increment primary key,
