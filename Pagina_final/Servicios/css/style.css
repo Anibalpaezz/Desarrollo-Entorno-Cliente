@@ -17,25 +17,25 @@ body {
 } */
 
 /* Estilos del filtro de los servicios */
-.cont_filtro {
+/* .cont_filtro {
+    margin-top: 150px;
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 10px;
     border: 1px solid #ccc;
-}
+} */
 
-.izquierda label {
+/* .izquierda label {
     display: block;
     margin-bottom: 5px;
-}
+} */
 
-.datos-derecha {
+/* .datos-derecha {
     flex: 2;
-    /* Este valor puede ajustarse según tus necesidades */
     padding: 10px;
     border: 1px solid #ccc;
-}
+} */
 /* Fin de estilos de los servicios */
 
 #copyright {

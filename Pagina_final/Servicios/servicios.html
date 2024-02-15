@@ -9,6 +9,31 @@
     <link href="https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css" rel="stylesheet" />
     <link rel="stylesheet" href="../Bootstrap/estilos/bootstrap.min.css">
     <link rel="stylesheet" href="css/style.css">
+    <style>
+        .contenedor {
+            display: flex;
+            width: 100%;
+        }
+
+        .div1 {
+            margin-top: 150px;
+            width: 10%;
+            /* Puedes ajustar el ancho según tus necesidades */
+            padding: 10px;
+            border: 1px solid #ccc;
+            box-sizing: border-box;
+        }
+
+        .div2{
+            display: flex;
+            margin-top: 150px;
+            width: 100%;
+            /* Puedes ajustar el ancho según tus necesidades */
+            padding: 10px;
+            border: 1px solid #ccc;
+            box-sizing: border-box;
+        }
+    </style>
     <title>Servicios</title>
 </head>
 
@@ -30,27 +55,65 @@
                 class="fa-solid fa-user fa-2xl"></i> </div>
     </nav>
 
-
-    <div class="cont_filtro">
-        <div class="izquierda">
-            <label>
-                <input type="checkbox" id="opcion1"> Catering
-            </label>
-            <label>
-                <input type="checkbox" id="opcion2"> Bailes
-            </label>
-            <label>
-                <input type="checkbox" id="opcion3"> Todo
-            </label>
+    <div class="contenedor">
+        <div class="div1">
+            <div class="izquierda">
+                <label>
+                    <input type="checkbox" id="opcion1"> Catering
+                </label>
+                <label>
+                    <input type="checkbox" id="opcion2"> Bailes
+                </label>
+                <label>
+                    <input type="checkbox" id="opcion3"> Todo
+                </label>
+            </div>
         </div>
-        <div class="datos-derecha" id="datosDerecha">
-            <!-- Los datos generados por JavaScript y PHP se mostrarán aquí -->
+
+        <div class="div2">
+            <div class="datos-derecha" id="datosDerecha"></div>
         </div>
     </div>
 
     <!-- Pie de la pagina -->
-    <footer class="bg-dark text-white pt-5 pb-4" id="pie-pagina"><div class="container text-center text-md-left"><div class="row text-center text-md-left"><div class="col-md-3 col-lg-3 col-xl-3 mx-auto mt-3"><h5 class="text-uppercase mb-4 font-weight-bold text-warning">Paco Party</h5><p>Nos enorgullece ser tu socio confiable para el alquiler de servicios esenciales. Simplificamos la gestión de servicios esenciales para que puedas centrarte en lo que realmente importa.</p></div><div class="col-md-2 col-lg-2 col-xl-2 mx-auto mt-3"><h5 class="text-uppercase mb-4 font-weight-bold text-warning">Servicios</h5><p><a href="#" class="text-white" v>Coches</a></p><p><a href="#" class="text-white" style="text-decoration:none">Catering</a></p><p><a href="#" class="text-white" style="text-decoration:none">Bailes</a></p><p><a href="#" class="text-white" style="text-decoration:none">Otros</a></p></div><div class="col-md-4 col-lg-3 col-xl-3 mx-auto mt-3"><h5 class="text-uppercase mb-4 font-weight-bold text-warning">Contacto</h5><p><i class="fas fa-home mr-3"></i><a href="../ubicacion/index.html">C/Serrano 66C, Madrid</a></p><p><i class="fas fa-envelope mr-3"></i>info@pacoparty.es</p><p><i class="fas fa-phone mr-3"></i>91 855 534 401</p><p><i class="fas fa-print mr-3"></i>91 891 655 576</p><p><i class="fa-brands fa-facebook-f fa-lg"></i>&nbsp;&nbsp;&nbsp;<i class="fab fa-instagram fa-lg"></i>&nbsp;&nbsp;&nbsp;<i class="fa-brands fa-twitter fa-lg"></i>&nbsp;&nbsp;&nbsp;<i class="fa-brands fa-tiktok fa-lg"></i>&nbsp;&nbsp;&nbsp;<i class="fab fa-youtube fa-lg"></i>&nbsp;&nbsp;&nbsp;<i class="fa-brands fa-linkedin-in fa-lg"></i>&nbsp;&nbsp;&nbsp;</p></div><div class="col-md-12 text-md-center"><p>Copyright ©2023 All rights reserved by:<strong class="text-warning">FrancisHoldings SL</strong></p></div></div></div></footer>
+    <footer class="bg-dark text-white pt-5 pb-4" id="pie-pagina">
+        <div class="container text-center text-md-left">
+            <div class="row text-center text-md-left">
+                <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mt-3">
+                    <h5 class="text-uppercase mb-4 font-weight-bold text-warning">Paco Party</h5>
+                    <p>Nos enorgullece ser tu socio confiable para el alquiler de servicios esenciales. Simplificamos la
+                        gestión de servicios esenciales para que puedas centrarte en lo que realmente importa.</p>
+                </div>
+                <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mt-3">
+                    <h5 class="text-uppercase mb-4 font-weight-bold text-warning">Servicios</h5>
+                    <p><a href="#" class="text-white" v>Coches</a></p>
+                    <p><a href="#" class="text-white" style="text-decoration:none">Catering</a></p>
+                    <p><a href="#" class="text-white" style="text-decoration:none">Bailes</a></p>
+                    <p><a href="#" class="text-white" style="text-decoration:none">Otros</a></p>
+                </div>
+                <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mt-3">
+                    <h5 class="text-uppercase mb-4 font-weight-bold text-warning">Contacto</h5>
+                    <p><i class="fas fa-home mr-3"></i><a href="../ubicacion/index.html">C/Serrano 66C, Madrid</a></p>
+                    <p><i class="fas fa-envelope mr-3"></i>info@pacoparty.es</p>
+                    <p><i class="fas fa-phone mr-3"></i>91 855 534 401</p>
+                    <p><i class="fas fa-print mr-3"></i>91 891 655 576</p>
+                    <p><i class="fa-brands fa-facebook-f fa-lg"></i>&nbsp;&nbsp;&nbsp;<i
+                            class="fab fa-instagram fa-lg"></i>&nbsp;&nbsp;&nbsp;<i
+                            class="fa-brands fa-twitter fa-lg"></i>&nbsp;&nbsp;&nbsp;<i
+                            class="fa-brands fa-tiktok fa-lg"></i>&nbsp;&nbsp;&nbsp;<i
+                            class="fab fa-youtube fa-lg"></i>&nbsp;&nbsp;&nbsp;<i
+                            class="fa-brands fa-linkedin-in fa-lg"></i>&nbsp;&nbsp;&nbsp;</p>
+                </div>
+                <div class="col-md-12 text-md-center">
+                    <p>Copyright ©2023 All rights reserved by:<strong class="text-warning">FrancisHoldings SL</strong>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
     <!-- Final de Pie de la pagina -->
+
+    <script src="js/script.js"></script>
 </body>
 
 </html>
