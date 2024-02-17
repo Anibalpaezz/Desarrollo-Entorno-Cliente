@@ -45,16 +45,16 @@ video {
 }
 
 #coche {
-    background-image: url(../../Images/citroen.jpg);
+    background-image: url(../../Images/cartas/citroen.jpg);
     background-size: cover
 }
 
 #catering {
-    background-image: url(../../Images/catering5k.jpg)
+    background-image: url(../../Images/cartas/catering.jpg);
 }
 
 #baile {
-    background-image: url(../../Images/baile4k.jpg)
+    background-image: url(../../Images/cartas/baile.jpg)
 }
 
 .card:focus-within .card-content, .card:hover .card-content {

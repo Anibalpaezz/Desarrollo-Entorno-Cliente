@@ -20,3 +20,7 @@ iframe{
     height: 740px;
 }
 /* Fin de estilos del mapa */
+
+/* Estilos de slider 2 */
+.container{padding:15px;display:flex;flex-wrap:wrap}.container div{margin:10px}.pictures{width:100px}.pictures img{margin-bottom:6px}.picture{position:relative;width:689px;height:auto}img{width:100%}.img-active{box-shadow:0 0 10px #fc2133,0 0 10px #fc2133,0 0 10px #fc2133}
+/* Fin de estilos del slider 2 */
