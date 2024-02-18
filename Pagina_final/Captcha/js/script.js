@@ -72,7 +72,7 @@ function verificarRespuesta() {
     );
 
     if (seleccionadasCorrectas && imagenesSeleccionadas.length <= 3 && imagenesSeleccionadas.length > 0) {
-        window.location.href = '../../Sesion/sesion.html';
+        window.location.href = 'http://localhost/Paco/Pagina_final/Sesion/sesion.html';
     } else {
         alert('Captcha incorrecto. Intenta de nuevo seleccionando las imágenes correctas.');
         generarCaptcha();
