@@ -33,9 +33,10 @@ try {
         $resul_consulta = $consulta->fetchAll(PDO::FETCH_ASSOC);
 
         foreach ($resul_consulta as $resultado) {
-            echo "<div style='border: 1px solid #ccc; padding: 10px; margin: 10px; max-width: 100px;'>";
-            echo "<p>Compañía: {$resultado['compañia']}</p>";
+            echo "<div class='cajas-datos'>";
+            echo "<h6>{$resultado['compañia']}</h6>";
             echo "<p>Precio: {$resultado['precio_hora']} euros</p>";
+            echo "<button type='button'>Comprar</button>";
             echo "</div>";
         }
     } else {
