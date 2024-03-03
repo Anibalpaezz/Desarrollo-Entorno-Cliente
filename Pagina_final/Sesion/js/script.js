@@ -2,10 +2,12 @@ document.addEventListener('contextmenu', function (e) {
     e.preventDefault();
     e.stopPropagation();
 });
+
 document.addEventListener('copy', function (e) {
     e.preventDefault();
     e.stopPropagation();
 });
+
 document.addEventListener('cut', function (e) {
     e.preventDefault();
     e.stopPropagation();
@@ -55,7 +57,7 @@ function numerosRandom() {
 
 function enviarSolicitudAlServidor(pulsados) {
     let inputUsuario = document.getElementById("usuarioInput");
-    let valor = inputUsuario.value; // Move this line outside the event listener
+    let valor = inputUsuario.value;
 
     inputUsuario.addEventListener("input", function() {
         valor = inputUsuario.value;
@@ -63,7 +65,7 @@ function enviarSolicitudAlServidor(pulsados) {
 
     var datos = {
         pulsados: pulsados,
-        valor: valor // Now, valor is accessible within the entire function
+        valor: valor
     };
 
     var configuracion = {
@@ -74,16 +76,19 @@ function enviarSolicitudAlServidor(pulsados) {
         body: JSON.stringify(datos),
     };
 
-    fetch("hola.php", configuracion)
+    fetch("php/sesion.php", configuracion)
         .then((response) => response.json())
         .then((data) => {
             console.log("Respuesta del servidor:", data);
+            
+            if (data.mensaje === 'Contraseña correcta') {
+                window.location.href = 'Pagina_final/Perfil/perfil.php';
+            }
         })
         .catch((error) => {
             console.error("Error al enviar la solicitud:", error);
         });
 }
-
 
 function pinRandom() {
     console.log("pinRandom function called");
@@ -110,6 +115,3 @@ function pinRandom() {
 
 window.addEventListener("load", numerosRandom);
 window.addEventListener("load", pinRandom);
-
-
-
