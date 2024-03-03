@@ -54,7 +54,9 @@
                 href="../global/captcha/index.html">Log in or Sign up</a> <i id="profile-der"
                 class="fa-solid fa-user fa-2xl"></i> </div>
     </nav>
+    <!--Fin de la cabecera de la pagina-->
 
+    <!--Inicio de contenedor de filtro-->
     <div class="contenedor">
         <div class="div1">
             <div class="izquierda">
@@ -67,13 +69,22 @@
                 <label>
                     <input type="checkbox" id="opcion3"> Todo
                 </label>
+    
+                <!-- Price range filter -->
+                <div>
+                    <label for="precioRange">Filtrar Precios:</label>
+                    <input type="range" id="precioRange" name="precioRange" min="0" max="100" step="1" value="0">
+                    <output for="precioRange" id="precioOutput">0</output>
+                    <button type="button" id="filtrarPrecios">Filtrar Precios</button>
+                </div>
             </div>
         </div>
-
+    
         <div class="div2">
             <div class="datos-derecha" id="datosDerecha"></div>
         </div>
     </div>
+    <!--Fin de contenedor de filtro-->
 
     <!-- Pie de la pagina -->
     <footer class="bg-dark text-white pt-5 pb-4" id="pie-pagina">

@@ -2,6 +2,7 @@
 include("../../PHP/conexion.php");
 
 $opciones = isset($_GET['opciones']) ? explode(',', $_GET['opciones']) : array();
+$precioValue = isset($_GET['precioValue']) ? $_GET['precioValue'] : null;
 
 // Inicializar la consulta como un string vacío
 $consultaSQL = '';
@@ -36,9 +37,9 @@ try {
             echo "<div class='cajas-datos'>";
             echo "<h6>{$resultado['compañia']}</h6>";
             echo "<p>Precio: {$resultado['precio_hora']} euros</p>";
-            echo "<button type='button'>Comprar</button>";
+            echo "<button type='button' class='comprar-button' data-company-id='{$resultado['ID']}'>Comprar</button>";
             echo "</div>";
-        }
+        }        
     } else {
         // Si la consulta está vacía, no hay opciones seleccionadas
         echo "<p>No se seleccionaron opciones.</p>";

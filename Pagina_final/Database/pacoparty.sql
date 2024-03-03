@@ -14,7 +14,8 @@ INSERT INTO `codipostal`(`CP`) VALUES (1000), (1001), (1002), (1003), (1004), (1
 
 DROP TABLE IF EXISTS usuario;
 CREATE TABLE usuarios (
-    DNI VARCHAR(10) primary key,
+    ID INT AUTO_INCREMENT primary key,
+    DNI VARCHAR(10),
     nombre VARCHAR(50),
     apellido VARCHAR(50),
     fecha_nacimiento date,
