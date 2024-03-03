@@ -30,13 +30,13 @@ document.addEventListener("DOMContentLoaded", function () {
             const parametros = "opciones=" + opciones.join(",");
             xhr.open("GET", "php/filtro.php?" + parametros, true);
             xhr.send();
-
-            checkbox1.addEventListener("change", actualizarContenido);
-            checkbox2.addEventListener("change", actualizarContenido);
-            checkbox3.addEventListener("change", actualizarContenido);
         }
 
         actualizarContenido();
+
+        checkbox1.addEventListener("change", actualizarContenido);
+        checkbox2.addEventListener("change", actualizarContenido);
+        checkbox3.addEventListener("change", actualizarContenido);
     } else {
         console.error("No se encontraron algunos elementos con ID especificado.");
     }
@@ -70,5 +70,4 @@ document.addEventListener("DOMContentLoaded", function () {
 
         return opcionesSeleccionadas.join(",");
     }
-
 });

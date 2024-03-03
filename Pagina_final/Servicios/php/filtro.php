@@ -1,50 +1,44 @@
 <?php
 include("../../PHP/conexion.php");
 
-$opciones = isset($_GET['opciones']) ? explode(',', $_GET['opciones']) : array();
-$precioValue = isset($_GET['precioValue']) ? $_GET['precioValue'] : null;
+if (isset($_GET['opciones'])) {
+    $selectedOptions = explode(',', $_GET['opciones']);
 
-// Inicializar la consulta como un string vacío
-$consultaSQL = '';
-
-// Verificar si 'todo' está en las opciones
-if (in_array('todo', $opciones)) {
-    // Si 'todo' está presente, no importa el resto de las opciones, seleccionar todo
-    $consultaSQL = "SELECT * FROM catering UNION ALL SELECT * FROM bailes";
-} else {
-    // Si 'todo' no está presente, construir la consulta según las opciones seleccionadas
-    if (in_array('catering', $opciones)) {
-        $consultaSQL .= "SELECT * FROM catering ";
-    }
-
-    if (in_array('bailes', $opciones)) {
-        // Si ya hay una parte de la consulta, agregar UNION ALL antes de la segunda parte
-        if ($consultaSQL !== '') {
-            $consultaSQL .= "UNION ALL ";
+    try {
+        $tableName = "";
+        if (in_array('catering', $selectedOptions)) {
+            $tableName = "catering";
+        } elseif (in_array('bailes', $selectedOptions)) {
+            $tableName = "bailes";
         }
-        $consultaSQL .= "SELECT * FROM bailes ";
-    }
-}
 
-try {
-    // Si la consulta no está vacía, ejecutarla
-    if ($consultaSQL !== '') {
-        $consulta = $conexion->prepare($consultaSQL);
-        $consulta->execute();
-        $resul_consulta = $consulta->fetchAll(PDO::FETCH_ASSOC);
+        if ($tableName !== '') {
+            $consultaSQL = "SELECT * FROM $tableName";
+            $consulta = $conexion->prepare($consultaSQL);
+            $consulta->execute();
+            $resul_consulta = $consulta->fetchAll(PDO::FETCH_ASSOC);
 
-        foreach ($resul_consulta as $resultado) {
-            echo "<div class='cajas-datos'>";
-            echo "<h6>{$resultado['compañia']}</h6>";
-            echo "<p>Precio: {$resultado['precio_hora']} euros</p>";
-            echo "<button type='button' class='comprar-button' data-company-id='{$resultado['ID']}'>Comprar</button>";
-            echo "</div>";
-        }        
-    } else {
-        // Si la consulta está vacía, no hay opciones seleccionadas
-        echo "<p>No se seleccionaron opciones.</p>";
+            foreach ($resul_consulta as $resultado) {
+                if ($resultado['disponibilidad'] == 0) {
+                    echo "<div class='cajas-datos-agotado'>";
+                    echo "<h6>{$resultado['compañia']}</h6>";
+                    echo "<p>Precio: {$resultado['precio_hora']} euros</p>";
+                    echo "<button type='button' class='comprar-button' data-company-id='{$resultado['ID']}' disabled>Agotado</button>";
+                } else {
+                    echo "<div class='cajas-datos-disponible'>";
+                    echo "<h6>{$resultado['compañia']}</h6>";
+                    echo "<p>Precio: {$resultado['precio_hora']} euros</p>";
+                    echo "<button type='button' class='comprar-button' data-company-id='{$resultado['ID']}'>Comprar</button>";
+                }
+
+                echo "</div>";
+            }
+        } else {
+            echo "<p>No valid table selected</p>";
+        }
+    } catch (PDOException $e) {
+        echo "<p>Error executing query: " . $e->getMessage() . "</p>";
     }
-} catch (PDOException $e) {
-    die("Error al ejecutar la consulta: " . $e->getMessage());
+} else {
+    echo "<p>Invalid parameters</p>";
 }
-?>

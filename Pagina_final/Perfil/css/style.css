@@ -4,11 +4,6 @@
     display: flex
 }
 
-.register-link p a, .remember-forgot a {
-    color: #fff;
-    text-decoration: none
-}
-
 * {
     margin: 0;
     padding: 0;
@@ -59,7 +54,7 @@ body {
     outline: 0;
     border-radius: 40px;
     font-size: 16px;
-    color: #fff;
+    color: black;
     padding: 20px 45px 20px 20px;
 }
 
@@ -73,22 +68,6 @@ body {
     top: 50%;
     transform: translateY(-50%);
     font-size: 20px
-}
-
-.wrapper .remember-forgot {
-    display: flex;
-    justify-content: space-between;
-    font-size: 14.5px;
-    margin: -15px 0 15px
-}
-
-.remember-forgot label input {
-    accent-color: white;
-    margin-right: 3px
-}
-
-.register-link p a:hover, .remember-forgot a:hover {
-    text-decoration: underline
 }
 
 .wrapper .btn {
@@ -105,25 +84,6 @@ body {
     font-weight: 600
 }
 
-.wrapper .register-link {
-    font-size: 14.5px;
-    text-align: center;
-    margin: 20px 0 15px
-}
-
-.register-link p a {
-    font-weight: 600
-}
-
-.jw-album-image img, .jw-element-image img {
-    pointer-events: none;
-    -webkit-touch-callout: none
-}
-
-.pswp__share-tooltip .pswp__share--download {
-    display: none
-}
-
 .wrapper1 {
     border-radius: 10px;
     backdrop-filter: blur(100px);
@@ -135,58 +95,6 @@ body {
     margin-bottom: 30px;
 }
 
-.calc-button {
-    align-items: center;
-    justify-content: center;
-    background: transparent;
-    border: 2px solid rgba(255, 255, 255, .2);
-    backdrop-filter: blur(100px);
-    box-shadow: 0 0 10px rgba(0, 0, 0, .2);
-    width: 68px;
-    height: 55px;
-    border: none;
-    padding: 5px;
-    font-size: 16px;
-    border-radius: 5px;
-    margin: 5px;
-    cursor: pointer;
-}
-
-.aceptado-borrado {
-    /* justify-content: center;
-    align-items: center;
-    display: flex; */
-    backdrop-filter: blur(100px);
-}
-
-.pin {
-    background: transparent;
-    width: 55px;
-    height: 55px;
-    border: 2px solid rgba(255, 255, 255, .2);
-    backdrop-filter: blur(100px);
-    box-shadow: 0 0 10px rgba(0, 0, 0, .2);
-    border: none;
-    padding: 5px;
-    font-size: 16px;
-    border-radius: 5px;
-    margin: 5px;
-    cursor: pointer;
-}
-
-.aceptado-borrado button {
-    width: 193px;
-    height: fit-content;
-    height: 45px;
-    background: 0 0;
-    border: 2px solid rgba(255, 255, 255, .2);
-    outline: 0;
-    border-radius: 40px;
-    font-size: 16px;
-    color: black;
-    background-color: white;
-    padding: 2px 4px 2px 2px;
-    cursor: pointer;
-    font-weight: 600;
-    margin-top: 20px;
+#dni {
+    cursor: not-allowed;
 }
